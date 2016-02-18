@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Base.AppTheme">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <style name="Theme.themes" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/md_red_500</item>
+        <item name="colorPrimaryDark">@color/md_red_700</item>
+        <item name="colorAccent">@color/md_red_500</item>
+        <item name="android:textColorPrimary">@color/md_white_1000</item>
+        <item name="colorControlHighlight">@color/md_grey_500_25</item>
+        <item name="android:windowBackground">@color/md_white_1000</item>
+    </style>
+
+
+
+    <style name="Theme.acremote" parent="Theme.AppCompat.Light.NoActionBar">
+
+
+
+        <item name="android:windowTranslucentStatus">true</item>
+
+
+
+    </style>
+
+
+</resources>

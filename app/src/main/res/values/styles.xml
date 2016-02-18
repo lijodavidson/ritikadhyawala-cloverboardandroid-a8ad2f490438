@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+   <!-- <style name="AppTheme" parent="Base.AppTheme">
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowAllowEnterTransitionOverlap">true</item>
+        <item name="android:windowAllowReturnTransitionOverlap">true</item>
+        <item name="android:windowSharedElementEnterTransition">@android:transition/move</item>
+        <item name="android:windowSharedElementExitTransition">@android:transition/move</item>
+    </style>-->
+    <style name="Base.AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <item name="colorPrimary">@color/md_red_500</item>
+    <item name="colorPrimaryDark">@color/md_red_700</item>
+    <item name="colorAccent">@color/md_red_500</item>
+
+    <item name="colorControlHighlight">@color/md_grey_500_25</item>
+    <item name="android:windowBackground">@color/md_white_1000</item>
+    </style>
+
+
+
+
+    <style name="Theme.acremote" parent="Theme.AppCompat.Light.NoActionBar">
+
+
+
+        <item name="android:windowTranslucentStatus">true</item>
+
+
+
+    </style>
+
+
+
+
+
+    <style name="Theme.themes" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/md_red_500</item>
+        <item name="colorPrimaryDark">@color/md_red_700</item>
+        <item name="colorAccent">@color/md_red_500</item>
+        <item name="android:textColorPrimary">@color/md_white_1000</item>
+        <item name="colorControlHighlight">@color/md_grey_500_25</item>
+        <item name="android:windowBackground">@color/md_white_1000</item>
+    </style>
+
+
+
+
+
+
+
+    <style name="ToolbarTheme" parent="AppTheme">
+        <item name="colorPrimaryDark">@color/md_red_700</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
+
+    </style>
+
+    <style name="NavigationViewTheme" parent="AppTheme">
+        <item name="textAppearanceListItem">@style/TextAppearance.AppCompat.Body2</item>
+    </style>
+
+    <style name="AppCompatAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+
+        <item name="android:textColorPrimary">#5c5c5c</item>
+        <item name="android:background">#fdfdfe</item>
+
+    </style>
+
+    <style name="Theme.forget" parent="Theme.AppCompat.Light.DarkActionBar">
+
+
+
+
+
+        <item name="colorPrimary">@color/md_red_700</item>
+        <item name="colorAccent">@color/md_white_1000</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
+
+    </style>
+
+
+
+
+
+</resources>

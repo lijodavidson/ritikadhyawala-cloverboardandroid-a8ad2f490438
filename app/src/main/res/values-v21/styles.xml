@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <style name="AppTheme" parent="Base.AppTheme">
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowActionBar">@android:color/transparent</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+
+    <style name="Theme.themes" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/md_red_500</item>
+        <item name="colorPrimaryDark">@color/md_red_700</item>
+        <item name="colorAccent">@color/md_red_500</item>
+        <item name="android:textColorPrimary">@color/md_white_1000</item>
+
+        <item name="colorControlHighlight">@color/md_grey_500_25</item>
+        <item name="android:windowBackground">@color/md_white_1000</item>
+    </style>
+
+
+
+    <style name="Theme.forget" parent="Theme.AppCompat.Light.DarkActionBar">
+
+
+
+
+
+        <item name="colorPrimary">@color/md_red_700</item>
+        <item name="colorAccent">@color/md_white_1000</item>
+        <item name="android:windowTranslucentStatus">true</item>
+
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
+
+    </style>
+
+
+   <!-- <style name="AppTheme" parent="ThemeActivity.AppCompat.Light.DarkActionBar">
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowAllowEnterTransitionOverlap">true</item>
+        <item name="android:windowAllowReturnTransitionOverlap">true</item>
+        <item name="android:windowSharedElementEnterTransition">@android:transition/explode</item>
+        <item name="android:windowSharedElementExitTransition">@android:transition/explode</item>
+
+    </style>-->
+
+    <style name="AppTheme.Dark" parent="Theme.AppCompat.NoActionBar">
+
+        <item name="android:windowTranslucentStatus">true</item>
+
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <style name="Theme.reg" parent="Theme.AppCompat.NoActionBar">
+
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowAllowEnterTransitionOverlap">true</item>
+        <item name="android:windowAllowReturnTransitionOverlap">true</item>
+        <item name="android:windowSharedElementEnterTransition">@android:transition/slide_right</item>
+        <item name="android:windowSharedElementExitTransition">@android:transition/explode</item>
+
+
+    </style>
+
+
+
+    <style name="Theme.acremote" parent="Theme.AppCompat.Light.NoActionBar">
+
+
+    <item name="android:windowTranslucentStatus">true</item>
+
+
+
+
+</style>
+
+
+
+
+    <style name="AppCompatAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/md_red_500</item>
+        <item name="android:textColorPrimary">#5c5c5c</item>
+        <item name="android:background">#fdfdfe</item>
+
+    </style>
+
+
+
+
+
+</resources>

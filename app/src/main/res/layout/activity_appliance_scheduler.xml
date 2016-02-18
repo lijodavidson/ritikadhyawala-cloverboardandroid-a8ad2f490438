@@ -1,0 +1,556 @@
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/schedulerLayout"
+    android:background="@color/md_grey_300"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/schedule_appliance_appbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_bar_height"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:fitsSystemWindows="true">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/schedule_appliance_collapsingToolbarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="?attr/colorPrimary"
+            android:fitsSystemWindows="true"
+            app:expandedTitleMarginStart="@dimen/expanded_toolbar_title_margin_start"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bedroom_header"
+                app:layout_collapseMode="parallax"
+                android:fitsSystemWindows="true"
+                app:layout_collapseParallaxMultiplier="0.7" />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/schedule_appliance_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom|end"
+
+                app:layout_collapseMode="parallax"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/toolbar_title_text"
+                    android:layout_width="280dp"
+                    android:text="Bedroom Fan"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:textColor="@color/md_white_1000"
+                    android:layout_gravity="bottom"
+                    android:textStyle="normal"
+                    android:transitionName="@string/abc_searchview_description_clear"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginBottom="25dp" />
+
+
+
+            </RelativeLayout>
+
+
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+
+
+
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/schedule_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginBottom="@dimen/cardMarginVertical"
+        android:layout_marginLeft="@dimen/cardMarginHorizontal"
+        android:layout_marginRight="@dimen/cardMarginHorizontal"
+        android:layout_marginTop="@dimen/cardMarginVertical"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        app:cardElevation="@dimen/card_resting_elivation"
+        app:cardMaxElevation="@dimen/card_raised_elivation"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardPreventCornerOverlap="false"
+        app:contentPadding="0dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+
+        android:background="@color/md_white_1000">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="16dp"
+            android:id="@+id/schedule_appliance_items">
+
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:id="@+id/linearLayout">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/card_content"
+                    android:text="Set Speed:"
+                    android:textColor="@color/md_red_500"
+                    style="@style/Base.TextAppearance.AppCompat.Widget.TextView.SpinnerItem"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"/>
+
+                <SeekBar
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/seekBar_scheduler"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginStart="24dp" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_margin="6dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/linearLayout2">
+                <Button
+                    android:id="@+id/schedule_power"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:background="@drawable/auto_on"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:longClickable="true"
+                    android:layout_gravity="right"
+                    />
+
+
+
+
+
+
+
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dip"
+                    android:background="#d3d3d3"
+
+                    android:layout_marginTop="17dp" />
+
+
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:id="@+id/scheduler_timepick"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp">
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/text2_scheduler"
+                        android:text="Set Time:"
+                        android:textColor="@color/md_red_500"
+                        style="@style/Base.TextAppearance.AppCompat.Widget.TextView.SpinnerItem"
+                        android:layout_marginTop="15dp" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/lineartimecover">
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_marginTop="16dp"
+                            android:layout_width="wrap_content"
+                            android:id="@+id/scheduler_timepick1"
+                            android:layout_height="wrap_content">
+
+                            <TextClock
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/textPick"
+                                android:text="Start :"
+
+                                />
+
+                            <TextClock
+                                android:layout_marginLeft="4dp"
+                                android:layout_marginRight="4dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/textClock_start"
+
+                                />
+
+                        </LinearLayout>
+
+
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_marginTop="16dp"
+                            android:layout_width="wrap_content"
+                            android:id="@+id/scheduler_timepick2"
+
+                            android:layout_height="wrap_content"
+                            android:gravity="end|right"
+                            android:layout_marginLeft="65dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/textPick1"
+                                android:text="End :"
+
+                                />
+
+                            <TextClock
+                                android:layout_marginLeft="4dp"
+                                android:layout_marginRight="4dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/textClock_end"
+
+                                android:gravity="end" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dip"
+                        android:background="#d3d3d3"
+
+                        android:layout_marginTop="17dp" />
+                </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/weekslatout">
+
+
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/schedule_repeat"
+                        android:text="Repeat:"
+                        android:textColor="@color/md_red_500"
+                        style="@style/Base.TextAppearance.AppCompat.Widget.TextView.SpinnerItem"
+                        android:layout_marginTop="15dp" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:id="@+id/lineareveryweek"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp">
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/everyweek"
+                                android:text="Every Week :"
+
+                                />
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="wrap_content"
+
+                                android:id="@+id/linearcheck"
+
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="140dp">
+
+                                <CheckBox
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+
+                                    android:id="@+id/schedule_appliance_checbox"
+                                    />
+
+
+
+
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:id="@+id/daylist"
+                        android:layout_height="match_parent">
+
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="wrap_content"
+                            android:id="@+id/dayslist"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginRight="6dp"
+                            android:layout_marginTop="6dp">
+
+
+                            <Button
+                                android:id="@+id/sunday_button"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:background="@drawable/button_background"
+                                android:text="S"
+                                />
+
+
+                            <Button
+                                android:id="@+id/monday_button"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:background="@drawable/button_background"
+                                android:text="M"
+                                />
+
+
+                            <Button
+                                android:id="@+id/tuesday_button"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:background="@drawable/button_background"
+                                android:text="T"
+                                />
+
+
+                            <Button
+                                android:id="@+id/wednesday_button"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:background="@drawable/button_background"
+                                android:text="W"
+                                />
+
+                            <Button
+                                android:id="@+id/thrusday_button"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:background="@drawable/button_background"
+                                android:text="T"
+                                />
+
+                            <Button
+                                android:id="@+id/friday_button"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:background="@drawable/button_background"
+                                android:text="F"
+                                />
+                            <Button
+                                android:id="@+id/saturday_button"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:background="@drawable/button_background"
+                                android:text="S"
+                                />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dip"
+                    android:background="#d3d3d3"
+
+                    android:layout_marginTop="17dp" />
+
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:id="@+id/buttoncover"
+                    android:layout_height="wrap_content">
+
+
+
+
+
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:id="@+id/linear_cancel_button"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_margin="4dp">
+
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+
+                            <Button
+                                style="?android:attr/borderlessButtonStyle"
+                                android:id="@+id/cancel_button"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="CANCEL"
+                                android:padding="8dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:paddingEnd="8dp"
+
+
+                                android:clickable="true"
+                                />
+
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+
+                            <Button
+                                style="?android:attr/borderlessButtonStyle"
+                                android:id="@+id/schedule_button"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="SCHEDULE"
+                                android:textColor="@color/md_red_500"
+                                android:padding="8dp"
+                                android:paddingLeft="8dp"
+                                android:paddingTop="8dp"
+                                android:paddingRight="8dp"
+                                android:paddingBottom="8dp"
+                                android:paddingEnd="8dp"
+
+
+                                android:clickable="true"
+                                />
+
+
+
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+
+
+
+            </LinearLayout>
+
+
+
+
+        </RelativeLayout>
+
+
+
+    </android.support.v7.widget.CardView>
+
+
+
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:clickable="true"
+
+        android:src="@drawable/scheduler"
+        app:layout_anchor="@+id/schedule_appliance_appbar"
+        app:layout_anchorGravity="bottom|left|end" />
+
+
+
+
+
+
+
+
+
+</android.support.design.widget.CoordinatorLayout>

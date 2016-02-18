@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloverbackendlibrary/cloverbackendlibrary.iml" filepath="$PROJECT_DIR$/cloverbackendlibrary/cloverbackendlibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ritikadhyawala-cloverboardandroid-a8ad2f490438.iml" filepath="$PROJECT_DIR$/ritikadhyawala-cloverboardandroid-a8ad2f490438.iml" />
+    </modules>
+  </component>
+</project>

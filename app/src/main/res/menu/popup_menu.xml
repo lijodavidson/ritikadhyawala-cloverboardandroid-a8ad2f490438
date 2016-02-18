@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/edit_appliance"
+        android:title="@string/edit_appliance"/>
+
+    <item
+        android:id="@+id/schedule_appliance"
+        android:title="@string/schedule_appliance"/>
+
+
+</menu>

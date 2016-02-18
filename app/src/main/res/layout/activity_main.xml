@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="@bool/fitsSystemWindows">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/fragment"
+        android:layout_marginTop="@dimen/status_bar_margin_top">
+    </FrameLayout>
+
+
+     <android.support.design.widget.CoordinatorLayout
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+         <android.support.design.widget.AppBarLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:fitsSystemWindows="true"
+             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+             <android.support.design.widget.CollapsingToolbarLayout
+                 android:id="@+id/collapse_toolbar"
+                 android:layout_width="match_parent"
+                 android:layout_height="250dp"
+                 android:fitsSystemWindows="true"
+                 app:contentScrim="?attr/colorPrimary"
+                 app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                 <ImageView
+                     android:id="@+id/header"
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent"
+
+                     android:fitsSystemWindows="true"
+                     android:scaleType="centerCrop"
+                     app:layout_collapseMode="parallax" />
+
+                 <android.support.v7.widget.Toolbar
+                     android:id="@+id/toolbar"
+                     android:layout_width="match_parent"
+                     android:layout_height="100dp"
+                     android:gravity="top"
+                     android:minHeight="?attr/actionBarSize"
+                     app:layout_collapseMode="pin"
+                     app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                     app:titleMarginTop="15dp" />
+
+                 <RelativeLayout
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_margin="35dp"
+
+                     app:layout_collapseMode="parallax"
+                     android:fitsSystemWindows="true"
+                     android:layout_below="@id/toolbar"
+                     android:layout_gravity="top|end"
+                     >
+
+
+                     <LinearLayout
+                         android:orientation="vertical"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_alignParentTop="true"
+                         android:id="@+id/acbuttonlin"
+                         android:layout_alignParentLeft="true"
+                         android:layout_alignParentStart="true">
+
+                         <Button
+                             android:layout_width="@dimen/ac_temp_value"
+                             android:layout_height="@dimen/ac_temp_value"
+                             android:id="@+id/blue_button"
+                             android:clickable="true"
+                             style="?android:attr/borderlessButtonStyle"
+                             android:textColor="@color/md_white_1000"
+                             android:textSize="44sp"
+
+                             android:background="@drawable/blue_button"
+                             android:layout_centerVertical="true"
+                             android:layout_alignParentRight="true"
+                             android:layout_alignParentEnd="true" />
+
+                         <LinearLayout
+                             android:orientation="horizontal"
+                             android:layout_width="@dimen/ac_temp_value"
+                             android:layout_height="wrap_content">
+
+                             <Button
+                                 android:layout_width="34dp"
+                                 android:layout_height="22dp"
+                                 android:id="@+id/inc_temp"
+                                 android:background="@drawable/temp_arrow_up"
+
+                                 />
+
+                             <View
+                                 android:layout_width="0dp"
+                                 android:layout_height="0dp"
+                                 android:layout_weight="1"/>
+
+                             <Button
+                                 android:layout_width="34dp"
+                                 android:layout_height="22dp"
+                                 android:id="@+id/dec_temp"
+
+
+                                 android:background="@drawable/temp_arrow_down"
+
+                                 />
+                         </LinearLayout>
+
+                     </LinearLayout>
+                     <Button
+                         android:id="@+id/main_button20"
+                         android:layout_width="60dp"
+                         android:layout_height="60dp"
+
+                         android:layout_alignRight="@+id/acbuttonlin"
+                         style="?android:attr/borderlessButtonStyle"
+                         android:longClickable="true" />
+                 </RelativeLayout>
+
+                 <android.support.design.widget.TabLayout
+                     android:id="@+id/tabs"
+                     android:layout_width="match_parent"
+                     android:layout_height="?attr/actionBarSize"
+                     android:layout_gravity="bottom"
+                     app:tabMode="scrollable"
+                     app:tabIndicatorColor="@color/md_amber_500" />
+
+             </android.support.design.widget.CollapsingToolbarLayout>
+
+         </android.support.design.widget.AppBarLayout>
+
+         <android.support.v4.view.ViewPager
+             android:id="@+id/viewpager"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+     </android.support.design.widget.CoordinatorLayout>
+
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/navigation_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="@bool/fitsSystemWindows"
+        app:headerLayout="@layout/navigation_drawer_header"
+        app:theme="@style/NavigationViewTheme" />
+
+</android.support.v4.widget.DrawerLayout>
+
+
+
+
+
+    <!--tools:context="com.example.lijo.cloverboard.MainActivity"-->
