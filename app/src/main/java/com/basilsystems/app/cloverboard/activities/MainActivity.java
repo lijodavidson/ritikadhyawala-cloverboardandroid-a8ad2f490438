@@ -470,20 +470,23 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupNavigationDrawerContent(NavigationView navigationView) {
+        navigationView.setItemIconTintList(null);
+
 
         Menu navigationMenus = navigationView.getMenu();
-        SubMenu homeSubmenu = navigationMenus.addSubMenu("Home");
-        homeSubmenu.setIcon(R.drawable.home);
-//        MenuItem homeMenu = navigationMenus.add(Menu.NONE,1, Menu.NONE,  "Home");
+        navigationMenus.add("HOME").setIcon(R.drawable.nav_notification);
+         // SubMenu homeSubmenu = navigationMenus.addSubMenu("Home");
+        //  homeSubmenu.setIcon(R.drawable.home);
+       // MenuItem homeMenu = navigationMenus.add(Menu.NONE,1, Menu.NONE,  "Home");
         for (Device device : devices) {
-            MenuItem room = homeSubmenu.add("&#160;&#160;&#160;&#160; " + device.getName());
+            MenuItem room = navigationMenus.add( device.getName());
 
 
         }
 
-        navigationMenus.add("Themes");
-        navigationMenus.add("Settings");
-        navigationMenus.add("Notifications");
+        navigationMenus.add("Themes").setIcon(R.drawable.nav_notification);
+        navigationMenus.add("Settings").setIcon(R.drawable.nav_settings);
+        navigationMenus.add("Notifications").setIcon(R.drawable.nav_notification);
 
         navigationView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {

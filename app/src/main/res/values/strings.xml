@@ -20,4 +20,5 @@
     <string name="title_activity_edit_theme">Edit_theme</string>
     <string name="title_activity_appliance_scheduler">ApplianceScheduler</string>
     <string name="title_activity_acremote">Acremote</string>
+    <string name="title_activity_splash_screen">SplashScreen</string>
 </resources>
