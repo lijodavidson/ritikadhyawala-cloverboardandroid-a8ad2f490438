@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
+import android.database.DataSetObserver;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.support.design.widget.CollapsingToolbarLayout;
@@ -29,15 +30,20 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.SubMenu;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ExpandableListAdapter;
+import android.widget.ExpandableListView;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 
 import com.basilsystems.app.cloverboard.Controller;
+import com.basilsystems.app.cloverboard.adapter.ExpandableListAdapterNew;
+import com.basilsystems.app.cloverboard.adapter.ExpandableListDataPump;
 import com.basilsystems.app.cloverboard.util.DemoData;
 import com.basilsystems.app.cloverboard.util.OnApplianceStatusChangeListener;
 import com.basilsystems.app.cloverboard.util.OnSwipeTouchListener;
@@ -52,6 +58,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 
@@ -74,6 +81,20 @@ public class MainActivity extends AppCompatActivity {
     private boolean isLongPressed = false;
     Button acTempButton;
     private Button button;
+
+
+    ExpandableListView expandableListView;
+    ExpandableListAdapter expandableListAdapter;
+    List<String> expandableListTitle;
+    HashMap<String, List<String>> expandableListDetail;
+
+
+
+
+
+
+
+
 
     MqttService mService;
     boolean mBound = false;
@@ -125,6 +146,79 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        expandableListView = (ExpandableListView) findViewById(R.id.expandableListView);
+        expandableListDetail = ExpandableListDataPump.getData();
+        expandableListTitle = new ArrayList<String>(expandableListDetail.keySet());
+        expandableListAdapter = new ExpandableListAdapterNew(this, expandableListTitle, expandableListDetail) {
+        };
+        expandableListView.setAdapter(expandableListAdapter);
+
+
+
+        expandableListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
+
+            @Override
+            public void onGroupExpand(int groupPosition) {
+                Toast.makeText(getApplicationContext(),
+                        expandableListTitle.get(groupPosition) + " List Expanded.",
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+
+
+      /*  expandableListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
+            int previousItem = -1;
+
+            @Override
+            public void onGroupExpand(int groupPosition) {
+                if (groupPosition != previousItem)
+                    expandableListView.collapseGroup(previousItem);
+                previousItem = groupPosition;
+            }
+        });*/
+
+
+
+
+        expandableListView.setOnGroupCollapseListener(new ExpandableListView.OnGroupCollapseListener() {
+
+            @Override
+            public void onGroupCollapse(int groupPosition) {
+                Toast.makeText(getApplicationContext(),
+                        expandableListTitle.get(groupPosition) + " List Collapsed.",
+                        Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+
+
+
+        expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+            @Override
+            public boolean onChildClick(ExpandableListView parent, View v,
+                                        int groupPosition, int childPosition, long id) {
+                Toast.makeText(
+                        getApplicationContext(),
+                        expandableListTitle.get(groupPosition)
+                                + " -> "
+                                + expandableListDetail.get(
+                                expandableListTitle.get(groupPosition)).get(
+                                childPosition), Toast.LENGTH_SHORT
+                )
+                        .show();
+                return false;
+            }
+        });
+
+
+
+
+
+
 
 //        startService(new Intent(MainActivity.this, MqttService.class));
         // Bind to LocalService
@@ -295,7 +389,13 @@ public class MainActivity extends AppCompatActivity {
         //displays first in nav view
 
 
+
+        
+        
+
     }
+
+
 
     private void customizedButton() {
         button.setBackgroundResource(R.drawable.off);
@@ -474,19 +574,19 @@ public class MainActivity extends AppCompatActivity {
 
 
         Menu navigationMenus = navigationView.getMenu();
-        navigationMenus.add("HOME").setIcon(R.drawable.nav_notification);
-         // SubMenu homeSubmenu = navigationMenus.addSubMenu("Home");
+        //navigationMenus.add("HOME").setIcon(R.drawable.nav_notification);
+       // SubMenu homeSubmenu = navigationMenus.addSubMenu("Home");
         //  homeSubmenu.setIcon(R.drawable.home);
        // MenuItem homeMenu = navigationMenus.add(Menu.NONE,1, Menu.NONE,  "Home");
-        for (Device device : devices) {
+       /* for (Device device : devices) {
             MenuItem room = navigationMenus.add( device.getName());
 
 
-        }
+        }*/
 
-        navigationMenus.add("Themes").setIcon(R.drawable.nav_notification);
+     /*   navigationMenus.add("Themes").setIcon(R.drawable.nav_notification);
         navigationMenus.add("Settings").setIcon(R.drawable.nav_settings);
-        navigationMenus.add("Notifications").setIcon(R.drawable.nav_notification);
+        navigationMenus.add("Notifications").setIcon(R.drawable.nav_notification);*/
 
         navigationView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
