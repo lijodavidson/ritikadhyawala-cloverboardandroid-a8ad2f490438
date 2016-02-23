@@ -4,6 +4,7 @@ import android.graphics.drawable.Icon;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 /**
@@ -11,34 +12,31 @@ import java.util.List;
  */
 public class ExpandableListDataPump {
 
-    public static HashMap<String, List<String>> getData() {
-        HashMap<String, List<String>> expandableListDetail = new HashMap<String, List<String>>();
+    public static LinkedHashMap<String, List<String>> getData() {
 
-        List<String> themes = new ArrayList<String>();
-        themes.add("MORNING");
-        themes.add("NIGHT ");
-        themes.add("PARTY");
+        LinkedHashMap<String, List<String>> expandableListDetail = new LinkedHashMap<String, List<String>>();
 
 
 
 
 
+        List<String> home = new ArrayList<String>();
+        home.add("BEDROOM");
+        home.add("KITCHEN");
+        home.add("LIVING ROOM");
+        expandableListDetail.put("HOME", home);
 
 
-        List<String> ahome = new ArrayList<String>();
-        ahome.add("BEDROOM");
-        ahome.add("KITCHEN");
-        ahome.add("LIVING ROOM");
 
+        List<String> theme = new ArrayList<String>();
+
+        expandableListDetail.put("THEME", theme);
+
+        List<String> notification = new ArrayList<String>();
+        expandableListDetail.put("NOTIFICATION", notification);
 
         List<String> settings = new ArrayList<String>();
-        List<String> notification = new ArrayList<String>();
-
-
-        expandableListDetail.put("cNOTIFICATION", notification);
-        expandableListDetail.put("bTHEME", themes);
-        expandableListDetail.put("dSETTINGS", settings);
-        expandableListDetail.put("aHOME", ahome);
+        expandableListDetail.put("SETTINGS", settings);
 
         return expandableListDetail;
     }

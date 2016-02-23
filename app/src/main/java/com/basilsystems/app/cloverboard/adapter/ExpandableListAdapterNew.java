@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.basilsystems.app.asdasdasdasdas.R;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 /**
@@ -21,10 +22,10 @@ public class ExpandableListAdapterNew extends BaseExpandableListAdapter {
 
     private Context context;
     private List<String> expandableListTitle;
-    private HashMap<String, List<String>> expandableListDetail;
+    private LinkedHashMap<String, List<String>> expandableListDetail;
    // private HashMap<String,List<String>> expandableicon;
     public ExpandableListAdapterNew(Context context, List<String> expandableListTitle,
-                                    HashMap<String, List<String>> expandableListDetail) {
+                                    LinkedHashMap<String, List<String>> expandableListDetail) {
         this.context = context;
         this.expandableListTitle = expandableListTitle;
         this.expandableListDetail = expandableListDetail;

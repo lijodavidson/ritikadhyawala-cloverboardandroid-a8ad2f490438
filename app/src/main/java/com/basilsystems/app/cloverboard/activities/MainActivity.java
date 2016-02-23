@@ -59,6 +59,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 
@@ -86,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
     ExpandableListView expandableListView;
     ExpandableListAdapter expandableListAdapter;
     List<String> expandableListTitle;
-    HashMap<String, List<String>> expandableListDetail;
+    LinkedHashMap<String, List<String>> expandableListDetail;
 
 
 
@@ -156,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        expandableListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
+     /*   expandableListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
 
             @Override
             public void onGroupExpand(int groupPosition) {
@@ -164,12 +165,12 @@ public class MainActivity extends AppCompatActivity {
                         expandableListTitle.get(groupPosition) + " List Expanded.",
                         Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
 
 
 
 
-      /*  expandableListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
+        expandableListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
             int previousItem = -1;
 
             @Override
@@ -178,12 +179,12 @@ public class MainActivity extends AppCompatActivity {
                     expandableListView.collapseGroup(previousItem);
                 previousItem = groupPosition;
             }
-        });*/
+        });
 
 
 
 
-        expandableListView.setOnGroupCollapseListener(new ExpandableListView.OnGroupCollapseListener() {
+      /*  expandableListView.setOnGroupCollapseListener(new ExpandableListView.OnGroupCollapseListener() {
 
             @Override
             public void onGroupCollapse(int groupPosition) {
@@ -192,7 +193,7 @@ public class MainActivity extends AppCompatActivity {
                         Toast.LENGTH_SHORT).show();
 
             }
-        });
+        });*/
 
 
 
@@ -578,13 +579,13 @@ public class MainActivity extends AppCompatActivity {
        // SubMenu homeSubmenu = navigationMenus.addSubMenu("Home");
         //  homeSubmenu.setIcon(R.drawable.home);
        // MenuItem homeMenu = navigationMenus.add(Menu.NONE,1, Menu.NONE,  "Home");
-       /* for (Device device : devices) {
+        /*for (Device device : devices) {
             MenuItem room = navigationMenus.add( device.getName());
 
 
-        }*/
+        }
 
-     /*   navigationMenus.add("Themes").setIcon(R.drawable.nav_notification);
+        navigationMenus.add("Themes").setIcon(R.drawable.nav_notification);
         navigationMenus.add("Settings").setIcon(R.drawable.nav_settings);
         navigationMenus.add("Notifications").setIcon(R.drawable.nav_notification);*/
 
