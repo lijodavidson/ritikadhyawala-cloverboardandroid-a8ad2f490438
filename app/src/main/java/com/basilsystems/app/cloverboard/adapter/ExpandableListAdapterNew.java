@@ -1,6 +1,7 @@
 package com.basilsystems.app.cloverboard.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,7 +24,8 @@ public class ExpandableListAdapterNew extends BaseExpandableListAdapter {
     private Context context;
     private List<String> expandableListTitle;
     private LinkedHashMap<String, List<String>> expandableListDetail;
-   // private HashMap<String,List<String>> expandableicon;
+
+    // private HashMap<String,List<String>> expandableicon;
     public ExpandableListAdapterNew(Context context, List<String> expandableListTitle,
                                     LinkedHashMap<String, List<String>> expandableListDetail) {
         this.context = context;
@@ -44,7 +46,6 @@ public class ExpandableListAdapterNew extends BaseExpandableListAdapter {
     public long getChildId(int listPosition, int expandedListPosition) {
         return expandedListPosition;
     }
-
 
 
 

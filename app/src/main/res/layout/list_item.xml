@@ -9,8 +9,11 @@
         android:layout_height="48dp"
         android:layout_marginLeft="85dp"
         android:textColor="@color/md_grey_700"
-        android:paddingTop="8dp"
-        android:paddingBottom="8dp"
         android:textSize="14sp"
+        android:text="hheh"
+        android:textAlignment="center"
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp"
+        android:layout_gravity="center_vertical"
          />
 </LinearLayout>
