@@ -53,6 +53,8 @@ import com.demo.cloverboard.cloverbackendlibrary.Util;
 import com.demo.cloverboard.cloverboardlibrary.data.Appliance;
 import com.demo.cloverboard.cloverboardlibrary.data.Device;
 import com.basilsystems.app.asdasdasdasdas.R;
+import com.getbase.floatingactionbutton.FloatingActionButton;
+
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -148,6 +150,56 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        // And then find it within the content view:
+
+
+
+
+
+        final FloatingActionButton fbutton = (FloatingActionButton) findViewById(R.id.energy_saver);
+        fbutton.setSize(FloatingActionButton.SIZE_NORMAL);
+        fbutton.setColorNormalResId(R.color.fab_normal);
+        fbutton.setColorPressedResId(R.color.fab_pressed);
+        fbutton.setIcon(R.drawable.flash);
+         fbutton.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+
+
+             }
+         });
+
+        final FloatingActionButton cbbutton = (FloatingActionButton) findViewById(R.id.add_cb);
+        cbbutton.setSize(FloatingActionButton.SIZE_NORMAL);
+        cbbutton.setTitle(String.valueOf(R.string.edit_appliance_nam));
+        cbbutton.setColorNormalResId(R.color.fab_normal);
+        cbbutton.setColorPressedResId(R.color.fab_pressed);
+        cbbutton.setIcon(R.drawable.add_cb);
+        cbbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         expandableListView = (ExpandableListView) findViewById(R.id.expandableListView);
         expandableListDetail = ExpandableListDataPump.getData();
         expandableListTitle = new ArrayList<String>(expandableListDetail.keySet());
@@ -180,6 +232,30 @@ public class MainActivity extends AppCompatActivity {
                 previousItem = groupPosition;
             }
         });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

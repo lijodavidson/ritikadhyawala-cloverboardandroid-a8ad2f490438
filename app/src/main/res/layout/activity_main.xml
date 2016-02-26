@@ -15,7 +15,6 @@
         android:layout_marginTop="@dimen/status_bar_margin_top">
 
 
-
     </FrameLayout>
 
 
@@ -169,8 +168,8 @@
     <RelativeLayout
 
         android:id="@+id/fablayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
@@ -193,36 +192,20 @@
             android:layout_alignParentEnd="true">
 
             <com.getbase.floatingactionbutton.FloatingActionButton
-                android:id="@+id/data"
+                android:id="@+id/energy_saver"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                fab:fab_size="mini"
-
-                fab:fab_colorNormal="@color/fab_normal"
-                fab:fab_colorPressed="@color/fab_pressed"
-                fab:fab_stroke_visible="true"
-
-                />
-
+                fab:fab_colorNormal="@color/white"
+                fab:fab_title="Set bottom menu enabled/disabled"
+                fab:fab_colorPressed="@color/white_pressed"/>
 
             <com.getbase.floatingactionbutton.FloatingActionButton
-                android:id="@+id/chart"
+                android:id="@+id/add_cb"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                fab:fab_size="mini"
-                fab:fab_colorNormal="@color/fab_normal"
-                fab:fab_colorPressed="@color/fab_pressed"
-                />
-
-            <com.getbase.floatingactionbutton.FloatingActionButton
-                android:id="@+id/addcd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                fab:fab_size="mini"
-                fab:fab_colorNormal="@color/fab_normal"
-                fab:fab_colorPressed="@color/fab_pressed"
-                />
-
+                fab:fab_colorNormal="@color/white"
+                fab:fab_title="Set bottom menu enabled/disabled"
+                fab:fab_colorPressed="@color/white_pressed"/>
 
 
         </com.getbase.floatingactionbutton.FloatingActionsMenu>
